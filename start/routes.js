@@ -15,5 +15,24 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const {ioc} = require('@adonisjs/fold')
+Route.get('/','Core/WifiController.index')
 
-Route.on('/').render('welcome')
+
+Route.any('/:module/:controller/:action',  ({view ,request, response,params,auth, session,antl}) => {
+  
+    const module = params.module
+    
+    const controller = params.controller
+    
+    const action = params.action
+    
+    const controllerPath = `App/Controllers/Http/${module}`
+    
+    const url = `${controllerPath}/${controller}.${action}`
+    
+    const controllerInstance = ioc.makeFunc(url)
+   
+    return controllerInstance.method.apply(controllerInstance.instance,[{view,request,response,params,auth, session,antl}])
+    
+})

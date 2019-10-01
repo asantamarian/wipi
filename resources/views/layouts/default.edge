@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>HRM Circular HR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <style>
+                [v-cloak] {
+                    display: none;
+                }
+                </style>
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/images/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff7276">
+      
+        @!section('pluginsCss')
+        
+
+        <!-- App css -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/plugins/enjoyhint/enjoyhint.css" rel="stylesheet">
+        <script src="/assets/js/modernizr.min.js"></script>
+        
+        
+        
+        @!section('pluginsCss2')
+    </head>
+
+    
+    <body>
+            
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <!-- Image logo -->
+                    <a href="/" class="logo">
+                        <span>
+                            <img src="/themes/default/logo.png" alt="" height="50">
+                        </span>
+                        <i>
+                            <img src="/themes/default/logo-sm.png" alt="" height="50">
+                        </i>
+                    </a>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+
+                        <!-- Navbar-left -->
+                        <ul class="nav navbar-nav navbar-left nav-menu-left">
+                            <li>
+                                <button type="button" class="button-menu-mobile open-left waves-effect">
+                                    <i class="dripicons-menu"></i>
+                                </button>
+                            </li>
+                           
+<!--
+                            <li class="dropdown hidden-xs">
+                                <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle waves-effect waves-light"> Projects <b
+                                        class=" fa fa-angle-down"></b></a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li>
+                                        <a href="javascript:;"><span> Adminox Admin </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><span> Frontend </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><span> Admin RTL </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><span> Dark Admin </span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        -->
+                            @loggedIn
+                             
+                            
+                            
+                            @include('partials/menu')
+                             @endloggedIn
+                        </ul>
+
+                        <!-- Right(Notification) -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden-xs">
+                                <form role="search" class="app-search">
+                                    <input type="text" placeholder="Search..."
+                                           class="form-control">
+                                    <a href=""><i class="fa fa-search"></i></a>
+                                </form>
+                            </li>
+                            <li>
+                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                    <i class="dripicons-bell"></i>
+                                    <span class="badge badge-pink">2</span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-lg user-list notify-list">
+                                    <li class="list-group notification-list m-b-0">
+                                        <div class="slimscroll">
+
+                                           <!-- list item-->
+                                           <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="media-left p-r-10">
+                                                    <em class="fa fa-bell-o bg-custom"></em>
+                                                 </div>
+                                                 <div class="media-body">
+                                                    <h5 class="media-heading text-custom">Competencias</h5>
+                                                    <p class="m-0">
+                                                        Tienes <span class="text-primary font-600">2</span> evaluaciones pendientes
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </a>
+
+                                           <!-- list item-->
+                                           <a href="javascript:void(0);" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="media-left p-r-10">
+                                                    <em class="fa fa-user-plus bg-danger"></em>
+                                                 </div>
+                                                 <div class="media-body">
+                                                    <h5 class="media-heading text-danger">Solicitudes de Feedback</h5>
+                                                    <p class="m-0">
+                                                        Tienes 10 solicitudes pendientes
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </a>
+
+                                           
+                                       </div>
+                                    </li>
+                                    <!-- end notification list -->
+                                </ul>
+                            </li>
+                         
+                        </ul> <!-- end navbar-right -->
+
+                    </div><!-- end container -->
+                </div><!-- end navbar -->
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="slimscroll-menu" id="remove-scroll">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metisMenu nav" id="side-menu">
+                            
+
+                        </ul>
+
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+                        
+                        @!section('content')
+
+
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2019 © 
+                </footer>
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/metisMenu.min.js"></script>
+        <script src="/assets/js/waves.js"></script>
+        <script src="/assets/js/jquery.slimscroll.js"></script>
+
+        <!-- Counter js  -->
+        <script src="/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+        <!--C3 Chart-->
+        <script type="text/javascript" src="/assets/plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/assets/plugins/c3/c3.min.js"></script>
+
+        <!--Echart Chart-->
+		<script src="/assets/plugins/echart/echarts-all.js"></script>
+        <script src="/assets/plugins/enjoyhint/enjoyhint.min.js"></script>
+        
+
+        <!-- App js -->
+        <script src="/assets/js/jquery.core.js"></script>
+        <script src="/assets/js/jquery.app.js"></script>
+        @!section('scripts2')
+
+
+        @!section('scripts')
+
+    </body>
+</html>
